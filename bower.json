@@ -1,0 +1,20 @@
+{
+  "name": "swam",
+  "version": "0.0.1",
+  "authors": [
+    "Estefano Castañeda <mixc21@gmail.com>"
+  ],
+  "description": "Simple Web Application Management, an architectural prototype for modern web applications, using angular AMD and Bootstrap CSS",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.4.x",
+    "angular-route": "^1.4.x",
+    "angular-resource": "^1.4.x",
+    "angular-sanitize": "^1.4.x",
+    "angular-animate": "^1.4.x",
+    "angular-aria": "^1.4.x",
+    "angular-ui-router": "~0.2.14",
+    "angular-material": "^0.9.0"
+  }
+  
+}
