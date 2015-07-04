@@ -4,7 +4,7 @@ module.exports = function(grunt) {
   // Load Grunt tasks declared in the package.json file
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-  var scripts ={
+  var scripts = {
         js: [],
         css: []
       };
@@ -34,7 +34,8 @@ module.exports = function(grunt) {
                 scripts: {
                     bundle: [
                               scripts.js,
-                              'source/lib/release/angular-ui-router.js'
+                              'source/lib/release/angular-ui-router.js',
+                              'source/scripts/**/*.js'
                             ]
                 },
                 styles: {
@@ -190,7 +191,8 @@ module.exports = function(grunt) {
         // You can use globing patterns like `css/**/*.css`
         // See https://github.com/gruntjs/grunt-contrib-watch#files
         tasks: ['jshint:all','htmlbuild'],
-        files: ['**/*.html',
+        files: ['template/**/*.html',
+                'source/views/**/*.html',
                 'source/**/*.js',
                 'source/config/**.js',
                 'source/scripts/**/*.js',

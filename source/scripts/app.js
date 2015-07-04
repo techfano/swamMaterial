@@ -5,39 +5,19 @@
         'ngResource',
         'ngMaterial',
         'ui.router',
-        'application.controller',
-        'application.factory',
-        'application.service',
-        'application.constant'
+        'module.controller'
     ]);
 
 
     app.config(function ($stateProvider, $urlRouterProvider,$httpProvider,$mdThemingProvider,$mdIconProvider) {
 
         $stateProvider.state('dashboard', {
-            url: "/dashboard",
-            templateUrl: "views/dashboard.html",
-            controller: "dashboardCtrl"
-        })
-        .state('default', {
-            abstract: true,
-            templateUrl: "views/default.html",
-            controller: "defaultCtrl"
-        })
-        .state('login', {
-            url: "/login",
-            templateUrl: "views/login.html",
-            controller: "loginCtrl"
-        })
-        .state('user', {
-            parent:'default',
-            url: "/user",
-            templateUrl: "views/user.html",
-            controller: "userController",
-            controllerAs: "ul"
+            url: "/demo",
+            templateUrl: "views/demo.view.html",
+            controller: "demo.ctrl"
         });
 
-        $urlRouterProvider.otherwise("/login");
+        $urlRouterProvider.otherwise("/demo");
         
         $httpProvider.interceptors.push(['$q', '$location', function($q, $location) {
             return {
