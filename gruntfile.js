@@ -196,7 +196,7 @@ module.exports = function(grunt) {
                 'source/**/*.js',
                 'source/config/**.js',
                 'source/scripts/**/*.js',
-                'source/css/dist/**.css'],
+                'source/css/**/**.css'],
         options: {
           livereload: true
         }
