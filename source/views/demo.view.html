@@ -1,46 +1,47 @@
-<md-content class="md-padding">
-  <p>
-    You can use the fabToolbar with a trigger and regular toolbar.
-  </p>
-  <p>
-    You may use the <code>md-open</code> attribute to programmatically
-    control whether or not the control is open, and you may add a class
-    of <code>md-left</code> or <code>md-right</code> to control the
-    position of the trigger and toolbar tools.
-  </p>
-</md-content>
-<md-fab-toolbar md-open="demo.isOpen" count="demo.count" ng-class="demo.selectedAlignment">
-  <md-fab-trigger class="align-with-text">
-    <md-button aria-label="menu" class="md-fab md-primary">
-      <md-icon md-svg-src="menu"></md-icon>
-    </md-button>
-  </md-fab-trigger>
-  <md-toolbar>
-    <md-fab-actions class="md-toolbar-tools">
-      <md-button aria-label="comment" class="md-icon-button">
-        <md-icon md-svg-src="share"></md-icon>
-      </md-button>
-      <md-button aria-label="label" class="md-icon-button">
-        <md-icon md-svg-src="phone"></md-icon>
-      </md-button>
-    </md-fab-actions>
-  </md-toolbar>
-</md-fab-toolbar>
-<md-content class="md-padding" layout="column">
-  <div layout="row" layout-align="space-around">
-    <div layout="column">
-      <b>Open/Closed</b>
-      <md-radio-group ng-model="demo.isOpen">
-        <md-radio-button ng-value="true">Open</md-radio-button>
-        <md-radio-button ng-value="false">Closed</md-radio-button>
-      </md-radio-group>
-    </div>
-    <div layout="column">
-      <b>Alignment</b>
-      <md-radio-group ng-model="demo.selectedAlignment">
-        <md-radio-button ng-value="'md-left'">Left</md-radio-button>
-        <md-radio-button ng-value="'md-right'">Right</md-radio-button>
-      </md-radio-group>
-    </div>
+
+
+<div layout="row">
+
+  <div flex>
   </div>
-</md-content>
+
+  <div flex>
+
+    <md-content class="md-padding">
+      <md-card>
+        
+        <md-toolbar class="md-primary">
+          <h1 class="md-toolbar-tools">
+            Login
+          </h1>
+        </md-toolbar>
+        
+        <md-card-content>
+          
+          <form ng-init="user={}" name="projectForm">
+            <md-input-container>
+              <label>User</label>
+              <input required name="description" ng-model="user.name">
+            </md-input-container>
+            <md-input-container>
+              <label>Password</label>
+              <input required name="clientName" ng-model="user.password">
+            </md-input-container>
+          </form>
+        
+        </md-card-content>
+        
+        <div class="md-actions" layout="row" layout-align="end center">
+          <md-button ng-click="getSignIn(user)" class="md-raised md-primary">Sign In</md-button>
+          <md-button class="md-raised">Cancel</md-button>
+        </div>
+      
+      </md-card>
+    </md-content>
+
+  </div>
+
+  <div flex hide-sm>
+  </div>
+
+</div>
