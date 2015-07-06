@@ -138,10 +138,7 @@ module.exports = function(grunt) {
 
     jshint: {
 
-      all: ['source/js/scripts/**/*.js',
-            'source/js/scripts/*.js',
-            'source/js/config/*.js',
-            'source/js/*.js']
+      all: ['source/scripts/**/*.js']
     },
 
     // compress: {

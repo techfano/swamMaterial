@@ -5,19 +5,21 @@
         'ngResource',
         'ngMaterial',
         'ui.router',
-        'module.controller'
+        'module.controller',
+        'module.service',
+        'module.constant'
     ]);
 
 
     app.config(function ($stateProvider, $urlRouterProvider,$httpProvider,$mdThemingProvider,$mdIconProvider) {
 
-        $stateProvider.state('dashboard', {
-            url: "/demo",
-            templateUrl: "views/demo.view.html",
-            controller: "demo.ctrl"
+        $stateProvider.state('login', {
+            url: "/login",
+            templateUrl: "views/login.view.html",
+            controller: "controller.login"
         });
 
-        $urlRouterProvider.otherwise("/demo");
+        $urlRouterProvider.otherwise("/login");
         
         $httpProvider.interceptors.push(['$q', '$location', function($q, $location) {
             return {

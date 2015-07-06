@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 	angular.module('module.controller', [
-		'module.demo'
-	])
+		'module.controller.login'
+	]);
 
 
 })();

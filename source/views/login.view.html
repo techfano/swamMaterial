@@ -21,19 +21,19 @@
           <form ng-init="user={}" name="projectForm">
             <md-input-container>
               <label>User</label>
-              <input required name="description" ng-model="user.name">
+              <input name="description" ng-model="user.name">
             </md-input-container>
             <md-input-container>
               <label>Password</label>
-              <input required name="clientName" ng-model="user.password">
+              <input name="clientName" ng-model="user.password">
             </md-input-container>
           </form>
         
         </md-card-content>
         
         <div class="md-actions" layout="row" layout-align="end center">
-          <md-button ng-click="getSignIn(user)" class="md-raised md-primary">Sign In</md-button>
-          <md-button class="md-raised">Cancel</md-button>
+          <md-button ng-disabled="!user.name || !user.password" ng-click="getSignIn(user)" class="md-raised md-primary">Sign In</md-button>
+          <md-button ng-click="user={}" class="md-raised">Cancel</md-button>
         </div>
       
       </md-card>
