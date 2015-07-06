@@ -5,17 +5,21 @@
 
     controllerLogin.$inject=[
     	'$scope',
-    	'$resourceService'
+    	'$resourceService',
+      '$state'
     ];
 
-    function controllerLogin($scope,$resourceService) {
-    console.log($resourceService);
-    	var auth = $resourceService.request('auth');
-      $scope.getSignIn=function(user){
-        
-      	auth.get(user,function(){
+    function controllerLogin($scope,$resourceService,$state) {
 
-      	});
+    	var auth = $resourceService.request('auth');
+
+      $scope.getSignIn=function(user){
+        $scope.loading=true;
+      	auth.get(user,function(){
+          $state.go('dashboard');
+      	},function(){
+          $scope.loading=false;
+        });
 
       };
     }

@@ -8,7 +8,8 @@
   <div flex>
 
     <md-content class="md-padding">
-      <md-card>
+
+      <md-card ng-hide="loading">
         
         <md-toolbar class="md-primary">
           <h1 class="md-toolbar-tools">
@@ -30,13 +31,18 @@
           </form>
         
         </md-card-content>
-        
+      
         <div class="md-actions" layout="row" layout-align="end center">
           <md-button ng-disabled="!user.name || !user.password" ng-click="getSignIn(user)" class="md-raised md-primary">Sign In</md-button>
           <md-button ng-click="user={}" class="md-raised">Cancel</md-button>
         </div>
       
       </md-card>
+
+      <div layout="row" layout-sm="column" layout-align="space-around" ng-show="loading">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+      </div>
+
     </md-content>
 
   </div>
