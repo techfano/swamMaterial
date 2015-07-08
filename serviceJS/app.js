@@ -107,6 +107,6 @@ app.get('/api/user/me/:id',authorized, function(req, res) {
 });
 
 app.listen(80);
-console.log("App listening on port 8080");
+console.log("App listening on port 80");
 
 
