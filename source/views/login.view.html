@@ -2,52 +2,52 @@
 
 <div layout="row">
 
-  <div flex>
-  </div>
+    <div flex>
+    </div>
 
-  <div flex>
+    <div flex>
 
-    <md-content class="md-padding">
+      <md-content class="md-padding">
 
-      <md-card ng-hide="loading">
-        
-        <md-toolbar class="md-primary">
-          <h1 class="md-toolbar-tools">
-            Login
-          </h1>
-        </md-toolbar>
-        
-        <md-card-content>
+        <md-card ng-hide="loading">
           
-          <form ng-init="user={}" name="projectForm">
-            <md-input-container>
-              <label>User</label>
-              <input name="description" ng-model="user.name">
-            </md-input-container>
-            <md-input-container>
-              <label>Password</label>
-              <input name="clientName" ng-model="user.password">
-            </md-input-container>
-          </form>
+          <md-toolbar class="md-primary">
+            <h1 class="md-toolbar-tools">
+              Login
+            </h1>
+          </md-toolbar>
+          
+          <md-card-content>
+            
+            <form ng-init="user={}" name="projectForm">
+              <md-input-container>
+                <label>User</label>
+                <input type="text" name="description" ng-model="user.name">
+              </md-input-container>
+              <md-input-container>
+                <label>Password</label>
+                <input type="password" name="clientName" ng-model="user.password">
+              </md-input-container>
+            </form>
+          
+          </md-card-content>
         
-        </md-card-content>
-      
-        <div class="md-actions" layout="row" layout-align="end center">
-          <md-button ng-disabled="!user.name || !user.password" ng-click="getSignIn(user)" class="md-raised md-primary">Sign In</md-button>
-          <md-button ng-click="user={}" class="md-raised">Cancel</md-button>
+          <div class="md-actions" layout="row" layout-align="end center">
+            <md-button ng-disabled="!user.name || !user.password" ng-click="getSignIn(user)" class="md-raised md-primary">Sign In</md-button>
+            <md-button ng-click="user={}" class="md-raised">Cancel</md-button>
+          </div>
+        
+        </md-card>
+
+        <div layout="row" layout-sm="column" layout-align="space-around" ng-show="loading">
+          <md-progress-circular md-mode="indeterminate"></md-progress-circular>
         </div>
-      
-      </md-card>
 
-      <div layout="row" layout-sm="column" layout-align="space-around" ng-show="loading">
-        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-      </div>
+      </md-content>
 
-    </md-content>
+    </div>
 
-  </div>
-
-  <div flex hide-sm>
-  </div>
+    <div flex hide-sm>
+    </div>
 
 </div>

@@ -13,7 +13,14 @@
 
     app.config(function ($stateProvider, $urlRouterProvider,$httpProvider,$mdThemingProvider,$mdIconProvider) {
 
-        $stateProvider.state('root', {
+        $stateProvider.state('init', {
+            abstract: true,
+            views: {
+              'content@': {
+                template: '<ui-view />', // NEW line, with a target for a child
+              }
+            }
+        }).state('root', {
             abstract: true,
             views: {
               '@': {
@@ -21,12 +28,15 @@
               },
               'header@': {
                 templateUrl: 'views/header.view.html',
+                controller: 'controllerHeader'
               },
-              'footer@': {
-                templateUrl: 'views/footer.view.html',
+              'content@': {
+                templateUrl: 'views/leftSide.view.html',
+                controller: 'controller.leftSide',
               }
             }
         }).state('login', {
+            parent:'init',
             url: "/login",
             templateUrl: "views/login.view.html",
             controller: "controller.login"
