@@ -57,7 +57,7 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 
 	};
 
-	User.find({}, function(err, users) {
+	user.find({}, function(err, users) {
   		if (err) throw err;
 
   		console.log(users);
