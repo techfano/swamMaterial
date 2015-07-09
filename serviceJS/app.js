@@ -89,6 +89,26 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 
 });
 
+app.get('/api/user/create', function(req, res) {
+
+	// create a new user
+	var newUser = user({
+	  name: 'Peter Quill',
+	  username: 'starlord55',
+	  password: 'password',
+	  admin: true
+	});
+
+	// save the user
+	newUser.save(function(err) {
+	  if (err) throw err;
+	  console.log('User created!');
+	});
+
+});
+
+
+
 /*app.get('/api/auth/verify/:token',authorized,function(req, res){
 
 	jwt.verify(req.params.token, hashPhrase, function(err, decoded) {
