@@ -61,7 +61,7 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
   		if (err) throw err;
 
   		console.log(users);
-  		res.send(user;
+  		res.send(user);
 	});
   
 	/*mongodb.documents('user', params, function(err,data){
