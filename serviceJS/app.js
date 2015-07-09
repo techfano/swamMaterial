@@ -94,7 +94,7 @@ app.get('/api/user/create', function(req, res) {
 	// create a new user
 	var newUser = user({
 	  name: 'Peter Quill',
-	  username: 'starlord55',
+	  username: 'Estefano2',
 	  password: 'password',
 	});
 
