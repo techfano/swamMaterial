@@ -96,7 +96,6 @@ app.get('/api/user/create', function(req, res) {
 	  name: 'Peter Quill',
 	  username: 'starlord55',
 	  password: 'password',
-	  admin: true
 	});
 
 	// save the user
