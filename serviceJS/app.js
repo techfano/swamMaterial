@@ -6,11 +6,17 @@ http://code.tutsplus.com/es/tutorials/token-based-authentication-with-angularjs-
 
 var express = require('express')
 var app = express()
-var mongodb = require('mongolab-provider').init('pinbuydb', 'o5wMMdzdsFiwqsD6Pd-gh2-rCRmUnk4N');
+//var mongodb = require('mongolab-provider').init('pinbuydb', 'o5wMMdzdsFiwqsD6Pd-gh2-rCRmUnk4N');
 var jwt = require('jsonwebtoken');
 var errorResponseText ='Error in authentication, user or Password.';
 var expiredMinutesSession = 600;
 var hashPhrase = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.';
+
+var mongoose = require('mongoose');
+
+var user = require('./model/user.model');
+
+mongoose.connect('mongodb://localhost/academydb');
 
 app.use(function(req, res, next) {
 
@@ -50,8 +56,14 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 		}
 
 	};
+
+	User.find({}, function(err, users) {
+  		if (err) throw err;
+
+  		console.log(users);
+	});
   
-	mongodb.documents('user', params, function(err,data){
+	/*mongodb.documents('user', params, function(err,data){
 
 			var auth={};
 
@@ -71,12 +83,12 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 				res.send(errorResponseText);						
 			}
 		
-	});
+	});*/
 
 
 });
 
-app.get('/api/auth/verify/:token',authorized,function(req, res){
+/*app.get('/api/auth/verify/:token',authorized,function(req, res){
 
 	jwt.verify(req.params.token, hashPhrase, function(err, decoded) {
   		if(err){
@@ -104,7 +116,7 @@ app.get('/api/user/me/:id',authorized, function(req, res) {
 
 	});
 
-});
+});*/
 
 app.listen(80);
 console.log("App listening on port 80");
