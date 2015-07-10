@@ -12,7 +12,7 @@ var userSchema = new Schema({
   birthDay: Date,
   location: String,
   created_at: Date
-},{ collection: 'user' });
+});
 
 var user = mongoose.model('user', userSchema);
 
