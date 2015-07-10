@@ -18,7 +18,7 @@ var hashPhrase = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.';
 
 var user = require('./model/user.model');
 
-app.use(express.json());
+app.use(express.bodyParser());
 app.use(express.urlencoded());
 app.use(express.multipart());
 
