@@ -6,17 +6,21 @@ http://code.tutsplus.com/es/tutorials/token-based-authentication-with-angularjs-
 
 var express = require('express')
 var app = express()
-//var mongodb = require('mongolab-provider').init('pinbuydb', 'o5wMMdzdsFiwqsD6Pd-gh2-rCRmUnk4N');
+
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/academydb');
+
 var jwt = require('jsonwebtoken');
 var errorResponseText ='Error in authentication, user or Password.';
 var expiredMinutesSession = 600;
 var hashPhrase = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.';
 
-var mongoose = require('mongoose');
 
 var user = require('./model/user.model');
 
-mongoose.connect('mongodb://localhost/academydb');
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(express.multipart());
 
 app.use(function(req, res, next) {
 
@@ -92,8 +96,9 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 app.post('/api/user/create', function(req, res) {
 
 	var newUser = user(req.body);
+	console.log(req.body);
 	newUser.save(function(err) {
-	  if (err){ res.send(JSON.stringify(req)); };
+	  if (err){ res.send(err); };
 	  res.send('User created!');
 	});
 
