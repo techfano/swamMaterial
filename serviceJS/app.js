@@ -36,7 +36,7 @@ app.set('json spaces', 2);
 
 function authorized(req, res, next) {
 	
-	var header = req.headers["authorization"];
+	var header = req.headers["Authorization"];
     
     jwt.verify(req.params.token, hashPhrase, function(err, decoded) {
 
@@ -93,12 +93,14 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 
 });
 
-app.post('/api/user/create', function(req, res, next) {
+app.post('/api/user/create', function(req, res) {
 
 	var newUser = user(req.body);
 
 	if (!req.body){ 
+
 	 	return res.sendStatus(400);
+	
 	}else{
 
 	 	newUser.save(function(err) {

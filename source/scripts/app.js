@@ -87,24 +87,18 @@
         
     });
 
-    app.run( function( $rootScope ,$resource, $state) {
+    app.run( function( $rootScope ,$resourceService, $state) {
 
 
         var checkingSession = function(){
 
             var verify = $resourceService.request('verify');
 
-            if(token){
-
               verify.get(function(verify){
                   $state.go('dashboard');
               },function(error){
                   $state.go('login');
               });              
-
-            }else{
-              $state.go('login');
-            }
 
         };
         
