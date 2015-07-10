@@ -57,11 +57,11 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 
 	};
 
-	user.find(params, function(err, users) {
+	user.find(params, function(err, user) {
   		if (err) throw err;
 
-  		console.log(users);
-  		res.send(users);
+  		console.log(user);
+  		res.send(user);
 	});
   
 	/*mongodb.documents('user', params, function(err,data){
