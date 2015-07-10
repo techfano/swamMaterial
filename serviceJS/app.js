@@ -95,18 +95,18 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 
 app.post('/api/user/create', function(req, res) {
 
-	var newUser = user(req.body);
+//	var newUser = user(req.body);
 	console.log(req.body);
-	if (!req.body){ 
-		return res.sendStatus(400);
-	}else{
+	// if (!req.body){ 
+	// 	return res.sendStatus(400);
+	// }else{
 
-		newUser.save(function(err) {
-		  if (err){ res.send(err); };
-		  res.send('User created!');
-		});
+	// 	newUser.save(function(err) {
+	// 	  if (err){ res.send(err); };
+	// 	  res.send('User created!');
+	// 	});
 
-	}
+	// }
 
 });
 
