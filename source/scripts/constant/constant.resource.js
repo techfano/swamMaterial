@@ -14,9 +14,15 @@
        			password:'@password'
        		},
        		actions:{
-       			'get':   {method:'GET'}
+       			'get':   {method:'GET',}
        		}
-       	}
+       	},
+        create:{
+          url:'api/user/create',
+          actions:{
+            'save':   {method:'POST',}
+          }
+        }
     });
 
 })();
