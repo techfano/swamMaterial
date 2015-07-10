@@ -103,7 +103,7 @@
 
         };
         
-        $rootScope.$on('$stateChangeStart',function(obj,data){
+        $rootScope.$on('$locationChangeStart',function(obj,data){
             
             checkingSession();
            
