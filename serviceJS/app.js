@@ -36,7 +36,7 @@ app.set('json spaces', 2);
 
 function authorized(req, res, next) {
 	
-	var header = req.headers["Authorization"];
+	var header = req.headers;
 
     console.log(header);
     /*jwt.verify(req.params.token, hashPhrase, function(err, decoded) {

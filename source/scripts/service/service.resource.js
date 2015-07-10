@@ -1,7 +1,7 @@
 
 (function() {
 	'use strict';
-	angular.module('module.service.resoure', [])
+	angular.module('module.service.resource', [])
 
 	.service('$resourceService', ['resourceServiceConfig', '$resource', function (config, $resource) {
 

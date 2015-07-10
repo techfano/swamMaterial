@@ -4,6 +4,7 @@
         'ngRoute',
         'ngResource',
         'ngMaterial',
+        'ngStorage',
         'ui.router',
         'module.controller',
         'module.service',
@@ -48,12 +49,12 @@
 
         $urlRouterProvider.otherwise("/login");
         
-        $httpProvider.interceptors.push(['$q', '$location', function($q, $location) {
+        $httpProvider.interceptors.push(['$q', '$location','serviceStorage', function($q, $location, serviceStorage) {
             return {
                     'request': function (config) {
                         config.headers = config.headers || {};
-                        if (localStorage.getItem("token")) {
-                            config.headers.Authorization = localStorage.getItem("token");
+                        if (serviceStorage.getData('token')) {
+                            config.headers.Authorization = serviceStorage.getData('token');
                         }
                         return config;
                     },

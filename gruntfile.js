@@ -87,6 +87,9 @@ module.exports = function(grunt) {
             'angular-material': {
               css_dest: 'source/css',
               fonts_dest: 'source/css/'
+            },
+            'ngStorage':{
+              js_dest:'source/js/lib'
             }
           }
         }
