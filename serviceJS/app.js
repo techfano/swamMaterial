@@ -18,6 +18,9 @@ var jwt = require('jsonwebtoken');
 var bodyParser = require('body-parser');
 var user = require('./model/user.model');
 
+app.use(bodyParser.json({ type: 'application/*+json' }))
+app.use(bodyParser.text({ type: 'text/html' }))
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(function(req, res, next) {
@@ -95,10 +98,16 @@ app.post('/api/user/create', function(req, res) {
 
 	var newUser = user(req.body);
 	console.log(req.body);
-	newUser.save(function(err) {
-	  if (err){ res.send(err); };
-	  res.send('User created!');
-	});
+	if (!req.body){ 
+		return res.sendStatus(400);
+	}else{
+
+		newUser.save(function(err) {
+		  if (err){ res.send(err); };
+		  res.send('User created!');
+		});
+
+	}
 
 });
 
