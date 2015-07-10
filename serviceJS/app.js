@@ -10,7 +10,7 @@ var app = express()
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/academydb');
 
-var errorResponseText ='Error in authentication, user or Password.';
+var errorResponse ='Error in authentication, user or Password.';
 var expiredMinutesSession = 600;
 var hashPhrase = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.';
 
@@ -42,7 +42,7 @@ function authorized(req, res, next) {
 
     	if(err){
   			res.status(403);
-  			res.send(errorResponseText);
+  			res.send(errorResponse);
   		}else{
 			next();
   		}
@@ -59,25 +59,29 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 	};
 
 	user.find(params, function(err, data) {
-  		if (err) throw err;
+  		
+  		if (err){
+  			res.status(400); res.send(err);
+  		}
 
   		var auth={};
 
   		if(data[0]){
 
-				var token = jwt.sign(data[0], hashPhrase,{ expiresInMinutes: expiredMinutesSession });
+			var token = jwt.sign(data[0], hashPhrase,{ expiresInMinutes: expiredMinutesSession });
 
-				if(req.params.username === data[0].username && req.params.password === data[0].password){
-					auth.token = token;
-					res.send(auth);				
-				}else{				
-					res.status(401);
-					res.send(err);				
-				}
-			}else{
-				res.status(403);
-				res.send(err);						
+			if(req.params.username === data[0].username && req.params.password === data[0].password){
+				auth.token = token;
+				res.send(auth);				
+			}else{				
+				res.status(401);
+				res.send(errorResponse);				
 			}
+
+		}else{
+			res.status(403);
+			res.send(errorResponse);						
+		}
 
 	});
   
@@ -94,11 +98,11 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 					res.send(auth);				
 				}else{				
 					res.status(401);
-					res.send(errorResponseText);				
+					res.send(errorResponse);				
 				}
 			}else{
 				res.status(403);
-				res.send(errorResponseText);						
+				res.send(errorResponse);						
 			}
 		
 	});*/
