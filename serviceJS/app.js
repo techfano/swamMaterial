@@ -27,6 +27,7 @@ app.use(function(req, res, next) {
 	res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
+    res.setHeader('Content-Type', 'application/json');
     next();
 
 });
@@ -96,7 +97,7 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 app.post('/api/user/create', function(req, res, next) {
 
 //	var newUser = user(req.body);
-	console.log(req.raw);
+	console.log(req.body);
 
 	// if (!req.body){ 
 	// 	return res.sendStatus(400);
