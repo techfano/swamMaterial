@@ -18,8 +18,6 @@ var jwt = require('jsonwebtoken');
 var bodyParser = require('body-parser');
 var user = require('./model/user.model');
 
-
-app.use(bodyParser.text({ type: 'text/html' }));
 app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
@@ -96,7 +94,8 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 app.post('/api/user/create', function(req, res) {
 
 //	var newUser = user(req.body);
-	console.log(req);
+	console.log(req.body);
+
 	// if (!req.body){ 
 	// 	return res.sendStatus(400);
 	// }else{
