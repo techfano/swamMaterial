@@ -18,10 +18,9 @@ var jwt = require('jsonwebtoken');
 var bodyParser = require('body-parser');
 var user = require('./model/user.model');
 
-app.use(bodyParser.json({ type: 'application/*+json' }))
-app.use(bodyParser.text({ type: 'text/html' }))
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.text({ type: 'text/html' }));
+app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
 
