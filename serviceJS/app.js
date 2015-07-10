@@ -71,42 +71,25 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 			var token = jwt.sign(data[0], hashPhrase,{ expiresInMinutes: expiredMinutesSession });
 
 			if(req.params.username === data[0].username && req.params.password === data[0].password){
+			
 				auth.token = token;
 				res.send(auth);				
+			
 			}else{				
+			
 				res.status(401);
 				res.send(errorResponse);				
+			
 			}
 
 		}else{
+
 			res.status(403);
 			res.send(errorResponse);						
+		
 		}
 
 	});
-  
-	/*mongodb.documents('user', params, function(err,data){
-
-			var auth={};
-
-			if(data[0]){
-
-				var token = jwt.sign(data[0], hashPhrase,{ expiresInMinutes: expiredMinutesSession });
-
-				if(req.params.username === data[0].username && req.params.password === data[0].password){
-					auth.token = token;
-					res.send(auth);				
-				}else{				
-					res.status(401);
-					res.send(errorResponse);				
-				}
-			}else{
-				res.status(403);
-				res.send(errorResponse);						
-			}
-		
-	});*/
-
 
 });
 
@@ -129,12 +112,14 @@ app.post('/api/user/create', function(req, res, next) {
 
 
 
-/*app.get('/api/auth/verify/:token',authorized,function(req, res){
+app.get('/api/auth/verify/:token',authorized,function(req, res){
 
 	jwt.verify(req.params.token, hashPhrase, function(err, decoded) {
   		if(err){
+
   			res.status(403);
   			res.send(err);
+  		
   		}else{
   			
 			delete decoded.password;
@@ -145,6 +130,8 @@ app.post('/api/user/create', function(req, res, next) {
 	});
 
 });
+
+/*
 
 app.get('/api/user/me/:id',authorized, function(req, res) {
 
