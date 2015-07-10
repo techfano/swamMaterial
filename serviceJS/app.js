@@ -58,6 +58,8 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 		password:req.params.password
 	};
 
+	console.log(params);
+
 	user.find(params, function(err, data) {
   		if (err) throw err;
 
