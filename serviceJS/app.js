@@ -112,9 +112,13 @@ app.post('/api/user/create', function(req, res, next) {
 
 
 
-app.get('/api/auth/verify/:token',authorized,function(req, res){
+app.get('/api/auth/verify',authorized,function(req, res){
 
-	jwt.verify(req.params.token, hashPhrase, function(err, decoded) {
+	var header = req.headers["authorization"];
+
+	console.log(header);
+
+	/*jwt.verify(req.params.token, hashPhrase, function(err, decoded) {
   		if(err){
 
   			res.status(403);
@@ -127,7 +131,7 @@ app.get('/api/auth/verify/:token',authorized,function(req, res){
   			res.send(decoded);
 
   		}
-	});
+	});*/
 
 });
 

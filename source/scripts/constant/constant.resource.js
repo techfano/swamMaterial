@@ -17,10 +17,18 @@
        			'get':   {method:'GET',}
        		}
        	},
+
         create:{
           url:'api/user/create',
           actions:{
             'save':   {method:'POST',}
+          }
+        },
+
+        verify:{
+          url:'api/auth/verify',
+          actions:{
+            'get':   {method:'GET',}
           }
         }
     });

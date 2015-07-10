@@ -92,9 +92,7 @@
 
         var checkingSession = function(){
 
-            var token=localStorage.getItem('token');
-
-            var verify = $resource('http://localhost:4000/api/auth/verify/'+token);
+            var verify = $resourceService.request('verify');
 
             if(token){
 
@@ -112,7 +110,7 @@
         
         $rootScope.$on('$stateChangeStart',function(obj,data){
             
-            //checkingSession();
+            checkingSession();
            
         });
 
