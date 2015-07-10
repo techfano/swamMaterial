@@ -10,12 +10,12 @@ var app = express()
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/academydb');
 
-var jwt = require('jsonwebtoken');
 var errorResponseText ='Error in authentication, user or Password.';
 var expiredMinutesSession = 600;
 var hashPhrase = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.';
 
-
+var jwt = require('jsonwebtoken');
+var bodyParser = require('body-parser');
 var user = require('./model/user.model');
 
 app.use(express.bodyParser());
