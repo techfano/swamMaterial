@@ -58,13 +58,24 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 		password:req.params.password
 	};
 
-	console.log(params);
-
 	user.find(params, function(err, data) {
   		if (err) throw err;
 
-  		console.log(data);
-  		res.send(data);
+  		if(data[0]){
+
+				var token = jwt.sign(data[0], hashPhrase,{ expiresInMinutes: expiredMinutesSession });
+
+				if(req.params.username === data[0].username && req.params.password === data[0].password){
+					auth.token = token;
+					res.send(auth);				
+				}else{				
+					res.status(401);
+					res.send(err);				
+				}
+			}else{
+				res.status(403);
+				res.send(err);						
+			}
 	});
   
 	/*mongodb.documents('user', params, function(err,data){
