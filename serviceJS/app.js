@@ -94,7 +94,7 @@ app.post('/api/user/create', function(req, res) {
 	var newUser = user(req.params);
 
 	newUser.save(function(err) {
-	  if (err) throw err;
+	  if (err){ throw err};
 	  res.send('User created!');
 	});
 
