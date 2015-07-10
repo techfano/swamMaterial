@@ -16,7 +16,7 @@
         
         $scope.loading=true;
 
-      	loginService.login(user,function(){
+      	loginService.signIn(user,function(){
         
           $state.go('dashboard');
       	

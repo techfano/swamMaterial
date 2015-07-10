@@ -5,7 +5,7 @@
 
 	.service('loginService', ['$resourceService', function ($resourceService) {
 
-			this.login=function(query,fnSuccess,fnError){
+			this.signIn=function(query,fnSuccess,fnError){
 				
 				var auth = $resourceService.request('auth');
 
