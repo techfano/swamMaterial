@@ -39,6 +39,7 @@ function authorized(req, res, next) {
 	var header = req.headers;
 
     console.log(header);
+    res.send(header);
     /*jwt.verify(req.params.token, hashPhrase, function(err, decoded) {
 
     	if(err){
