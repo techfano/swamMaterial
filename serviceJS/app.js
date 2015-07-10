@@ -61,6 +61,8 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 	user.find(params, function(err, data) {
   		if (err) throw err;
 
+  		var auth={};
+
   		if(data[0]){
 
 				var token = jwt.sign(data[0], hashPhrase,{ expiresInMinutes: expiredMinutesSession });
@@ -76,6 +78,7 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 				res.status(403);
 				res.send(err);						
 			}
+
 	});
   
 	/*mongodb.documents('user', params, function(err,data){
