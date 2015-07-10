@@ -12,14 +12,18 @@
 
     function controllerLogin($scope,$resourceService,$state,loginService) {
 
-    	
-
       $scope.getSignIn=function(user){
+        
         $scope.loading=true;
+
       	loginService.login(user,function(){
+        
           $state.go('dashboard');
-      	},function(){
+      	
+        },function(){
+        
           $scope.loading=false;
+        
         });
 
       };
