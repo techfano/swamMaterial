@@ -57,7 +57,7 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 
 	};
 
-	user.find({}, function(err, users) {
+	user.find(params, function(err, users) {
   		if (err) throw err;
 
   		console.log(users);
@@ -94,7 +94,7 @@ app.get('/api/user/create', function(req, res) {
 	// create a new user
 	var newUser = user({
 	  name: 'Peter Quill',
-	  username: 'Estefano2',
+	  username: 'Estefano',
 	  password: 'password',
 	});
 
