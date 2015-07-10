@@ -34,7 +34,7 @@ module.exports = function(grunt) {
                 scripts: {
                     bundle: [
                               scripts.js,
-                              'source/lib/release/angular-ui-router.js',
+                              'source/lib/**/*.js',
                               'source/scripts/**/*.js'
                             ]
                 },

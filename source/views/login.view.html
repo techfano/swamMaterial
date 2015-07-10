@@ -35,13 +35,14 @@
           <div class="md-actions" layout="row" layout-align="end center">
             <md-button ng-disabled="!user.name || !user.password" ng-click="getSignIn(user)" class="md-raised md-primary">Sign In</md-button>
             <md-button ng-click="user={}" class="md-raised">Cancel</md-button>
-            <md-button ng-click="create()" class="md-raised">Create</md-button>
+            <!-- <md-button ng-click="create()" class="md-raised">Create</md-button> -->
           </div>
         
         </md-card>
 
         <div layout="row" layout-sm="column" layout-align="space-around" ng-show="loading">
-          <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+          <md-progress-circular md-mode="indeterminate">
+          </md-progress-circular>
         </div>
 
       </md-content>
