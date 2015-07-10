@@ -89,19 +89,13 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 
 });
 
-app.get('/api/user/create', function(req, res) {
+app.post('/api/user/create', function(req, res) {
 
-	// create a new user
-	var newUser = user({
-	  name: 'Peter Quill',
-	  username: 'Estefano',
-	  password: 'password',
-	});
+	var newUser = user(req.params);
 
-	// save the user
 	newUser.save(function(err) {
 	  if (err) throw err;
-	  console.log('User created!');
+	  res.send('User created!');
 	});
 
 });
