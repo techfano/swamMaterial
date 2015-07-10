@@ -97,9 +97,8 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 app.post('/api/user/create', function(req, res, next) {
 
 	var newUser = user(req.body);
-	console.log(req.body);
 
-	 if (!req.body){ 
+	if (!req.body){ 
 	 	return res.sendStatus(400);
 	}else{
 
