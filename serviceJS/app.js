@@ -54,12 +54,8 @@ function authorized(req, res, next) {
 app.get('/api/auth/login/:username/:password', function(req, res) {
 
 	var params = {
-
-		where:{
-			username:req.params.username,
-			password:req.params.password
-		}
-
+		username:req.params.username,
+		password:req.params.password
 	};
 
 	user.find(params, function(err, data) {
