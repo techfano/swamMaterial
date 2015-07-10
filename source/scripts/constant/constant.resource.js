@@ -5,7 +5,7 @@
 
 	.constant('resourceServiceConfig',{
 
-		baseUrl:'http://localhost:4000/',
+		baseUrl:'http://www.prodesign.pe/',
 
         auth:{
        		url:'api/auth/login/:name/:password',
