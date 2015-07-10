@@ -92,7 +92,7 @@ app.get('/api/auth/login/:username/:password', function(req, res) {
 app.post('/api/user/create', function(req, res) {
 
 	var newUser = user(req.params);
-	console.log(req.params);
+	console.log(req.body);
 	newUser.save(function(err) {
 	  if (err){ res.send(err); };
 	  res.send('User created!');
