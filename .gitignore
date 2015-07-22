@@ -2,10 +2,10 @@
 node_modules/
 bower_components/
 distro/
-source/css/dist/
+source/css/lib/
 source/dist/
 source/index.html
-source/js/lib/
+source/lib/
 source/less/
 
 # Mac OS X hidden files

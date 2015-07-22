@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 
   Object.keys(grunt.file.readJSON('./bower.json').dependencies).map(
         function(file) {
-            scripts.css.push('source/css/'+file+'.css');
+            scripts.css.push('source/css/lib/'+file+'.css');
         }
   );
  
@@ -85,8 +85,7 @@ module.exports = function(grunt) {
           ignorePackages: ['jquery','less'],
           packageSpecific: {
             'angular-material': {
-              css_dest: 'source/css',
-              fonts_dest: 'source/css/'
+              css_dest: 'source/css/lib/'
             },
             'ngStorage':{
               js_dest:'source/js/lib'
@@ -129,15 +128,14 @@ module.exports = function(grunt) {
       }*/
     },
 
-    // concat: {
-    //   css:{
+    concat: {
+      css:{
+        src: ['source/css/attach.css',
+              'source/css/lib/**/*.css'],
+        dest: 'distro/css/distro.css'
 
-    //     src: ['distro/css/attach.css',
-    //           'distro/css/dist/css/bootstrap.css'],
-    //     dest: 'distro/css/distro.css'
-
-    //   }
-    // },
+      }
+    },
 
     jshint: {
 
@@ -155,14 +153,10 @@ module.exports = function(grunt) {
     //   }
     // },
 
-    // clean: {
-    //   distro:["distro/css/dist",
-    //           "distro/css/attach.css",
-    //           "distro/zip"],
-    //   source:["source/less",
-    //           "source/dist"]
-
-    // },
+    clean: {
+      source:["source/lib",
+              "source/css/lib"]
+    },
    
     //*****************************************************
  
@@ -185,11 +179,6 @@ module.exports = function(grunt) {
     // grunt-watch will monitor the projects files
     watch: {
       all: {
-        // Replace with whatever file you want to trigger the update from
-        // Either as a String for a single entry 
-        // or an Array of String for multiple entries
-        // You can use globing patterns like `css/**/*.css`
-        // See https://github.com/gruntjs/grunt-contrib-watch#files
         tasks: ['jshint:all','htmlbuild'],
         files: ['template/**/*.html',
                 'source/views/**/*.html',
@@ -214,14 +203,16 @@ module.exports = function(grunt) {
  
   // Creates the `swam` task
   grunt.registerTask('swam', [
+    'clean:source',
     'bower',
     'htmlbuild:source',
-   /* 'clean:source',*/
     'express',
     'open',
     'watch'
   ]);
 
-  grunt.registerTask('packing', []);
+  grunt.registerTask('distro', [
+    'concat:css'
+  ]);
 
 };
