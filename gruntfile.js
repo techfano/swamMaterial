@@ -55,27 +55,27 @@ module.exports = function(grunt) {
         }
     },
 
-    // uglify: {
-    //   my_target: {
-    //     files: [{
-    //         expand: true,
-    //         cwd: 'source/js/lib',
-    //         src: '**/*.js',
-    //         dest: 'distro/js/lib'
-    //     }]
-    //   }
-    // },
+    uglify: {
+      distro: {
+        files: [{
+            expand: true,
+            cwd: 'distro/js',
+            src: '**/*.js',
+            dest: 'distro/js'
+        }]
+      }
+    },
 
-    // cssmin: {
-    //   target: {
-    //     files: [{
-    //       expand: true,
-    //       cwd: 'source/css',
-    //       src: '**/*.css',
-    //       dest: 'distro/css',
-    //     }]
-    //   }
-    // },
+    cssmin: {
+      distro: {
+        files: [{
+          expand: true,
+          cwd: 'distro/css',
+          src: '**/*.css',
+          dest: 'distro/css',
+        }]
+      }
+    },
 
     bower: {
       dev: {
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
     },
 
     copy: {
-     /* index: {
+      index: {
         expand: true,
         cwd: 'source/',
         src: 'index.html',
@@ -107,25 +107,19 @@ module.exports = function(grunt) {
         cwd: 'source/views',
         src: '*.html',
         dest: 'distro/views',
-      },*/
+      },
       scripts: {
         expand: true,
-        cwd: 'source/js/scripts/',
+        cwd: 'source/scripts/',
         src: '**/*.js',
-        dest: 'distro/js/scripts/',
-      }/*,
-      js: {
-        expand: true,
-        cwd: 'source/js/',
-        src: '*.js',
-        dest: 'distro/js/',
+        dest: 'distro/scripts/',
       },
-      fonts: {
+      svg: {
         expand: true,
-        cwd: 'source/css/dist/fonts',
-        src: '*.*',
-        dest: 'distro/fonts'
-      }*/
+        cwd: 'source/svg/',
+        src: '*.svg',
+        dest: 'distro/svg/'
+      }
     },
 
     concat: {
@@ -134,6 +128,11 @@ module.exports = function(grunt) {
               'source/css/lib/**/*.css'],
         dest: 'distro/css/distro.css'
 
+      },
+      js:{
+        src:['source/lib/**/*.js',
+            'source/scripts/**/*.js'],
+        dest:'distro/js/distro.js'
       }
     },
 
@@ -155,7 +154,8 @@ module.exports = function(grunt) {
 
     clean: {
       source:["source/lib",
-              "source/css/lib"]
+              "source/css/lib"],
+      distro:["distro"]
     },
    
     //*****************************************************
@@ -212,7 +212,14 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('distro', [
-    'concat:css'
+    'clean:distro',
+    'concat:css',
+    'concat:js',
+    'copy:index',
+    'copy:views',
+    'copy:svg',
+    'uglify:distro',
+    'cssmin:distro'
   ]);
 
 };

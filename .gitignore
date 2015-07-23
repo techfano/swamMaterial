@@ -3,10 +3,9 @@ node_modules/
 bower_components/
 distro/
 source/css/lib/
-source/dist/
+source/scripts/
 source/index.html
 source/lib/
-source/less/
 
 # Mac OS X hidden files
 .DS_Store
