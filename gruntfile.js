@@ -52,6 +52,28 @@ module.exports = function(grunt) {
                     }
                 },
             }
+        },
+        distro: {
+            src: 'template/source/index.html',
+            dest: 'distro/index.html',
+            options: {
+                scripts: {
+                    bundle: [
+                              'distro/js/**/*.js'
+                            ]
+                },
+                styles: {
+                    bundle: [ 
+                        'distro/css/**/*.css'
+                    ]
+                },
+                sections: {
+                    layout: {
+                        header: 'template/source/header.html',
+                        footer: 'template/source/footer.html'
+                    }
+                },
+            }
         }
     },
 
@@ -141,16 +163,16 @@ module.exports = function(grunt) {
       all: ['source/scripts/**/*.js']
     },
 
-    // compress: {
-    //   distro: {
-    //     options: {
-    //       archive: 'distro/zip/distro.zip'
-    //     },
-    //     expand: true,
-    //     cwd: 'distro',
-    //     src: ['**']
-    //   }
-    // },
+    compress: {
+      distro: {
+        options: {
+          archive: 'export/distro.zip'
+        },
+        expand: true,
+        cwd: 'distro',
+        src: ['**']
+      }
+    },
 
     clean: {
       source:["source/lib",
@@ -215,11 +237,12 @@ module.exports = function(grunt) {
     'clean:distro',
     'concat:css',
     'concat:js',
-    'copy:index',
     'copy:views',
     'copy:svg',
     'uglify:distro',
-    'cssmin:distro'
+    'cssmin:distro',
+    'htmlbuild:distro',
+    'compress:distro'
   ]);
 
 };
