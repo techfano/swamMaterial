@@ -55,7 +55,7 @@ module.exports = function(grunt) {
         },
         distro: {
             src: 'template/source/index.html',
-            dest: 'distro/index.html',
+            dest: 'distro/',
             options: {
                 scripts: {
                     bundle: [
@@ -78,6 +78,9 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      options: {
+        mangle: false
+      },
       distro: {
         files: [{
             expand: true,
@@ -152,7 +155,8 @@ module.exports = function(grunt) {
 
       },
       js:{
-        src:['source/lib/**/*.js',
+        src:['source/lib/angular.js',
+            'source/lib/**/*.js',
             'source/scripts/**/*.js'],
         dest:'distro/js/distro.js'
       }

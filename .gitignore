@@ -2,6 +2,7 @@
 node_modules/
 bower_components/
 distro/
+export/
 source/css/lib/
 source/scripts/
 source/index.html
