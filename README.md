@@ -11,7 +11,7 @@ Licensed under MIT. Swam is absolutely free for personal or commercial use.
 - AngularJS project architecture integrated. 
 - Controlling your web apps development and distributions
 - minifying css and js distribution automatically
-- Developing with live reaload (in port: 9000) http://localhost:9000
+- Developing with live-reload (in port: 9000) http://localhost:9000
  
 # Getting started
 
