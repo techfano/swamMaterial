@@ -40,8 +40,7 @@ module.exports = function(grunt) {
                 },
                 styles: {
                     bundle: [ 
-                        'source/css/dist/css/bootstrap.css',
-                        'source/css/attach.css',
+                        'source/css/**/*.css',
                         scripts.css
                     ]
                 },
@@ -99,6 +98,17 @@ module.exports = function(grunt) {
           src: '**/*.css',
           dest: 'distro/css',
         }]
+      }
+    },
+
+    sass: {                              
+      dist: {                             
+        options: {                        
+          style: 'expanded'
+        },
+        files: {                          
+          'source/css/main.css': 'source/css/sass/main.scss'
+        }
       }
     },
 
@@ -205,13 +215,13 @@ module.exports = function(grunt) {
     // grunt-watch will monitor the projects files
     watch: {
       all: {
-        tasks: ['jshint:all','htmlbuild'],
+        tasks: ['jshint:all','htmlbuild','sass'],
         files: ['template/**/*.html',
                 'source/views/**/*.html',
                 'source/**/*.js',
                 'source/config/**.js',
                 'source/scripts/**/*.js',
-                'source/css/**/**.css'],
+                'source/css/**/**.scss'],
         options: {
           livereload: true
         }
@@ -232,6 +242,7 @@ module.exports = function(grunt) {
     'clean:source',
     'bower',
     'htmlbuild:source',
+    'sass',
     'express',
     'open',
     'watch'
