@@ -47,7 +47,7 @@
             templateUrl: "views/dashboard.view.html"
         });
 
-        $urlRouterProvider.otherwise("/login");
+        $urlRouterProvider.otherwise("/dashboard");
         
         $httpProvider.interceptors.push(['$q', '$location','serviceStorage', function($q, $location, serviceStorage) {
             return {
@@ -105,7 +105,7 @@
         
         $rootScope.$on('$locationChangeStart',function(obj,data){
             
-            checkingSession();
+            //checkingSession();
            
         });
 

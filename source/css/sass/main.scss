@@ -11,3 +11,16 @@ md-content {
 .fabToolbardemoBasicUsage md-fab-toolbar.md-left md-fab-trigger.align-with-text {
   left: 7px; 
 }
+
+#container{
+	position: relative;
+	width: 1024px;
+	margin: 0 auto;
+	background: $white;
+}
+
+@media(max-width:800px){
+	#container{
+		width:95%;
+	}
+}
