@@ -15,7 +15,7 @@ Licensed under MIT. Swam is absolutely free for personal or commercial use.
  
 # Getting started
 
-it's easy to use, first you need to instal the follow
+it's easy to use, first you need to install the follow
 
 - Node.js https://nodejs.org/en/download/
 - Bower http://bower.io/ (npm install -g bower)
