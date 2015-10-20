@@ -18,10 +18,5 @@
     "grunt-html-build": "^0.3.2",
     "grunt-open": "~0.2.3",
     "matchdep": "~0.1.2"
-  },
-  "dependencies": {
-    "angular": "^1.4.3",
-    "angular-animate": "^1.4.3",
-    "angular-aria": "^1.4.3"
   }
 }
