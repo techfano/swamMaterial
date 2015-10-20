@@ -11,13 +11,18 @@ md-content {
   background-color: transparent !important;
 }
 
+md-card{
+	width: 800px;
+	margin: 0 auto;
+}
+
 .fabToolbardemoBasicUsage md-fab-toolbar.md-left md-fab-trigger.align-with-text {
   left: 7px; 
 }
 
 #container{
-	position: relative;
-	width: 900px;
+	
+	width: 100%;
 	margin: 0 auto;
 	background: $background-color !important;
 	height:100%;
