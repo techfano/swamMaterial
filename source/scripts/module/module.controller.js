@@ -4,7 +4,7 @@
 		'module.controller.login',
 		'module.controller.leftSide',
 		'module.controller.header',
-		'module.controller.today'
+		'module.controller.post'
 	]);
 
 

@@ -45,7 +45,7 @@
             parent: 'root',
             url: "/today",
             templateUrl: "views/today.view.html",
-            controller: "controller.today"
+            controller: "controller.post"
         });
 
         $urlRouterProvider.otherwise("/today");
