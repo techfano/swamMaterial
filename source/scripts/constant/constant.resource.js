@@ -25,6 +25,15 @@
           }
         },
 
+        postAll:{
+          url:'api/post/get/all',
+          params:{
+          },
+          actions:{
+            'get':   {method:'GET', isArray:true}
+          }
+        },
+
         create:{
           url:'api/user/create',
           actions:{
