@@ -24,6 +24,18 @@ module.exports = function(grunt) {
   // Configure Grunt 
   grunt.initConfig({
 
+    freddie: {
+      dev: {
+        options: {
+          root: 'source',
+          port: 9000,
+          proxy: {
+            '/api': 'http://www.prodesign.pe'
+          }
+        }
+      }
+    },
+
     htmlbuild: {
         source: {
             src: 'template/source/index.html',
@@ -223,7 +235,7 @@ module.exports = function(grunt) {
                 'source/scripts/**/*.js',
                 'source/css/**/**.scss'],
         options: {
-          livereload: true
+          livereload: 35729
         }
       }
     },
@@ -232,7 +244,7 @@ module.exports = function(grunt) {
     open: {
       all: {
         // Gets the port from the connect configuration
-        path: 'http://localhost:<%= express.all.options.port%>'
+        path: 'http://localhost:<%= freddie.dev.options.port%>'
       }
     }
   });
@@ -243,7 +255,7 @@ module.exports = function(grunt) {
     'bower',
     'htmlbuild:source',
     'sass',
-    'express',
+    'freddie',
     'open',
     'watch'
   ]);

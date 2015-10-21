@@ -5,8 +5,6 @@
 
 	.constant('resourceServiceConfig',{
 
-		baseUrl:'http://www.prodesign.pe/',
-
         auth:{
        		url:'api/auth/login/:name/:password',
        		params:{
@@ -14,21 +12,30 @@
        			password:'@password'
        		},
        		actions:{
-       			'get':   {method:'GET',}
+       			'get':   {method:'GET'}
        		}
        	},
+
+        paragraphAll:{
+          url:'api/paragraph/get/all',
+          params:{
+          },
+          actions:{
+            'get':   {method:'GET', isArray:true}
+          }
+        },
 
         create:{
           url:'api/user/create',
           actions:{
-            'save':   {method:'POST',}
+            'save':   {method:'POST'}
           }
         },
 
         verify:{
           url:'api/auth/verify',
           actions:{
-            'get':   {method:'GET',}
+            'get':   {method:'GET'}
           }
         }
     });
