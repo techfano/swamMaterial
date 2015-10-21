@@ -7,7 +7,7 @@
 
 			this.request=function(url){
 
-				var resource = $resource(config.baseUrl+config[url].url,
+				var resource = $resource(config[url].url,
 										config[url].params,
 										config[url].actions,
 										config[url].options);

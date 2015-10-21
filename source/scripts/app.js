@@ -41,13 +41,19 @@
             url: "/login",
             templateUrl: "views/login.view.html",
             controller: "controller.login"
-        }).state('dashboard', {
+        }).state('today', {
             parent: 'root',
-            url: "/dashboard",
-            templateUrl: "views/dashboard.view.html"
+            url: "/today",
+            templateUrl: "views/today.view.html",
+            controller: "controller.post"
+        }).state('article', {
+            parent: 'root',
+            url: "/article/:url",
+            templateUrl: "views/paragraph.view.html",
+            controller: "controller.paragraph"
         });
 
-        $urlRouterProvider.otherwise("/dashboard");
+        $urlRouterProvider.otherwise("/today");
         
         $httpProvider.interceptors.push(['$q', '$location','serviceStorage', function($q, $location, serviceStorage) {
             return {

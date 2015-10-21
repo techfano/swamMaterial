@@ -1,0 +1,31 @@
+<md-content class="article" flex layout-padding>
+	
+	<div class="img-container">
+		<img src="{{post.image_url}}" />
+		<div class="title-container">				
+			<h2>{{post.title}}</h2>
+			<h5>{{post.title_sub_head}}</h5>
+		</div>
+	</div>
+
+
+	<div class="article-container font-left">
+		<div class="main-paragraph">{{post.mainparagraph}}</div>
+		<article data-ng-repeat="paragraph in articles">
+			
+			<h2><span>{{$index+1}}. </span><span>{{paragraph.subtitle}}</span></h2>
+			
+			<figure>
+				<img data-ng-show="paragraph.image_url" data-ng-src="{{paragraph.image_url}}" />
+			</figure>
+
+
+			<div data-ng-bind-html="trustHtml(paragraph.paragraph)">
+			</div>
+
+	  	</article>
+	</div>
+	
+	
+
+</md-content>

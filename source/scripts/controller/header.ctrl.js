@@ -7,14 +7,21 @@
     	'$scope',
     	'$mdSidenav',
       '$mdUtil',
-      '$log'
+      '$log',
+      '$state'
     ];
 
-    function controllerHeader($scope,$mdSidenav,$mdUtil,$log) {
+    function controllerHeader($scope,$mdSidenav,$mdUtil,$log,$state) {
       
       
       $scope.toggleLeft = buildToggler('left');
       $scope.toggleRight = buildToggler('right');
+      $scope.state = $state;
+
+      $scope.goBack = function(){
+        $state.go('today');
+      };
+
       /**
        * Build handler to open/close a SideNav; when animation finishes
        * report completion in console

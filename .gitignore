@@ -5,7 +5,6 @@ distro/
 export/
 .sass-cache/
 source/css/lib/
-source/scripts/
 source/index.html
 source/lib/
 *.css
