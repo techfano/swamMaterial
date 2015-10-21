@@ -11,13 +11,17 @@
       'serviceStorage'
     ];
 
-    function controllerPost($scope,$resourceService) {
+    function controllerPost($scope,$resourceService,$state) {
 
       var postAll =  $resourceService.request('postAll');
 
       postAll.get(function(data){
         $scope.publications = data;
       });
+
+      /*$scope.gotoArticle = function(url){
+        $state.search('article',{url:url});
+      };*/
       
     }
     

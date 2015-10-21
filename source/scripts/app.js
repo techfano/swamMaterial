@@ -46,6 +46,11 @@
             url: "/today",
             templateUrl: "views/today.view.html",
             controller: "controller.post"
+        }).state('article', {
+            parent: 'root',
+            url: "/article/:url",
+            templateUrl: "views/paragraph.view.html",
+            controller: "controller.paragraph"
         });
 
         $urlRouterProvider.otherwise("/today");

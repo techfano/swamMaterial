@@ -25,9 +25,29 @@
           }
         },
 
+        paragraphUrl:{
+          url:'api/paragraph/get/url/:url',
+          params:{
+            url:'@url'
+          },
+          actions:{
+            'get':   {method:'GET', isArray:true}
+          }
+        },
+
         postAll:{
           url:'api/post/get/all',
           params:{
+          },
+          actions:{
+            'get':   {method:'GET', isArray:true}
+          }
+        },
+
+        postUrl:{
+          url:'api/post/get/url/:url',
+          params:{
+            url:'@url'
           },
           actions:{
             'get':   {method:'GET', isArray:true}
