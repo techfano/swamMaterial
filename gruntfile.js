@@ -4,20 +4,25 @@ module.exports = function(grunt) {
   // Load Grunt tasks declared in the package.json file
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-  var scripts = {
-        js: [],
-        css: []
-      };
+  var bowerFile = grunt.file.readJSON('./bower.json');
 
-  Object.keys(grunt.file.readJSON('./bower.json').dependencies).map(
+  var project = {
+    version: bowerFile.version,
+    scripts: {
+      js:[],
+      css:[]
+    }     
+  }
+
+  Object.keys(bowerFile.dependencies).map(
         function(file) {
-            scripts.js.push('source/lib/'+file+'.js');
+            project.scripts.js.push('source/lib/'+file+'.js');
         }
   );
 
-  Object.keys(grunt.file.readJSON('./bower.json').dependencies).map(
+  Object.keys(bowerFile.dependencies).map(
         function(file) {
-            scripts.css.push('source/css/lib/'+file+'.css');
+            project.scripts.css.push('source/css/lib/'+file+'.css');
         }
   );
  
@@ -28,7 +33,7 @@ module.exports = function(grunt) {
       dev: {
         options: {
           root: 'source',
-          port: 9000,
+          port: 3000,
           proxy: {
             '/api': 'http://www.prodesign.pe'
           }
@@ -45,7 +50,7 @@ module.exports = function(grunt) {
                 relative: true,
                 scripts: {
                     bundle: [
-                              scripts.js,
+                              project.scripts.js,
                               'source/lib/**/*.js',
                               'source/scripts/**/*.js'
                             ]
@@ -53,7 +58,7 @@ module.exports = function(grunt) {
                 styles: {
                     bundle: [ 
                         'source/css/**/*.css',
-                        scripts.css
+                        project.scripts.css
                     ]
                 },
                 sections: {
@@ -172,15 +177,15 @@ module.exports = function(grunt) {
     concat: {
       css:{
         src: ['source/css/attach.css',
-              'source/css/lib/**/*.css'],
-        dest: 'distro/css/distro.css'
+              'source/css/**/*.css'],
+        dest: 'distro/css/prodesign-'+project.version+'.css'
 
       },
       js:{
         src:['source/lib/angular.js',
             'source/lib/**/*.js',
             'source/scripts/**/*.js'],
-        dest:'distro/js/distro.js'
+        dest:'distro/js/prodesign-' + project.version + '.js'
       }
     },
 
@@ -192,7 +197,7 @@ module.exports = function(grunt) {
     compress: {
       distro: {
         options: {
-          archive: 'export/distro.zip'
+          archive: 'export/prodesign-'+project.version+'.zip'
         },
         expand: true,
         cwd: 'distro',
@@ -213,7 +218,7 @@ module.exports = function(grunt) {
     express: {
       all: {
         options: {
-          port: 9000,
+          port: 3000,
           hostname: "0.0.0.0",
           bases: ['source'], // Replace with the directory you want the files served from
                               // Make sure you don't use `.` or `..` in the path as Express
@@ -226,6 +231,9 @@ module.exports = function(grunt) {
  
     // grunt-watch will monitor the projects files
     watch: {
+      options: {
+        livereload: 35729
+      },
       all: {
         tasks: ['jshint:all','htmlbuild','sass'],
         files: ['template/**/*.html',
@@ -233,10 +241,7 @@ module.exports = function(grunt) {
                 'source/**/*.js',
                 'source/config/**.js',
                 'source/scripts/**/*.js',
-                'source/css/**/**.scss'],
-        options: {
-          livereload: 35729
-        }
+                'source/css/**/**.scss']
       }
     },
  
