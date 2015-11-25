@@ -1,0 +1,22 @@
+[{
+    "_id": {
+        "$oid": "550897dce4b018f3e2920789"
+    },
+    "post_id": "55089008e4b018f3e2920761",
+    "post_url": "fudamentos_de_una_buena_experiencia_de_usuario",
+    "post_number_order": "1",
+    "subtitle": "Minimalismo",
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed mi id dui euismod dictum sit amet eu orci. Praesent eu faucibus justo. Nunc sollicitudin cursus dui, eget consectetur nibh feugiat eget. Nulla cursus mi eu rhoncus facilisis. Suspendisse interdum dolor risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec id facilisis elit. Fusce blandit sodales urna quis aliquet. Donec felis diam, blandit at sapien mattis, scelerisque tristique mi. Cras nulla velit, condimentum vel tempus sit amet, congue sit amet nibh. Fusce quis magna facilisis, laoreet felis vel, vestibulum tortor. Aliquam quis elit erat. Etiam a tristique elit. Quisque dolor arcu, pharetra vitae enim eget, pulvinar tristique ipsum.",
+    "image_url": "http://3.bp.blogspot.com/-k9B6kIBFfis/TiSstX4j7hI/AAAAAAAADl4/4teOnX1eyw8/s1600/fondos%2Bde%2Bpantalla%252Bminimalista.jpg"
+},
+{
+    "_id": {
+        "$oid": "55089095e4b018f3e2920763"
+    },
+    "post_id": "55088fd2e4b018f3e2920760",
+    "post_url": "principios_basicos_para_una_buena_experiencia_de_usuario",
+    "post_number_order": "1",
+    "subtitle": "Altruismo",
+    "paragraph": "Uno de los principios mas importantes y que se debe tomar en cuenta siempre cuando diseñamos un producto o servicio es <strong>el Altruismo,<\/strong> la mayoría de personas dedican mucho tiempo al desarrollo pensando en lo que creen o en lo que consideran mejor para una solución y esto siempre sera algo completamente equivocado, si tan solo ves todo desde tu propio punto de vista, en realidad no importa lo que tu creas, pienses, sientas o intuyas por que si desarrollas algo solo debes concentrarte en lo que tu cliente siempre quiere, de eso se trata el Altruismo de <strong>pensar 100% en crear satisfacción, felicidad y emociones para los demás,<\/strong> como es logico solo pensar en este caso para tus clientes o usuarios.<br /><br /><strong>El Altruismo<\/strong> definiendo lo de una forma mas concisa: \u201ces la preocupación máxima y desinteresada por el bienestar hacia los demás, dejando de lado todo prejuicio unilateral e individualista.\u201d<br /><br />Sintetizar una necesidad seria un modo practico de definir como crear una solución, quizás tengas el producto o la idea en mente y esta en si parezca genial y única, tal ves en su genero, pero no solo se trata de eso de tener esa idea o producto , si no de muchas cosas mas, las cuales entran a tallar paso a paso en como esta idea va ir tomando forma en un único camino, el de su uso en la practica y de que reacciones genera en tu publico aclamado. <strong>Es por eso que en la base de tu pirámide conceptual de desarrollo y creación debes de se altruista siempre como base para todo lo demás que sigue,<\/strong> que viene a encajar después y lo cual extenderé en los siguientes 6 principios a tomar en cuenta.",
+    "image_url": "http://alistapart.com/d/_made/d/ALA_405_Training-the-CMS_960_450_61.jpg"
+}]

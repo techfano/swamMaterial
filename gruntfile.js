@@ -34,8 +34,8 @@ module.exports = function(grunt) {
         options: {
           root: 'source',
           port: 3000,
-          proxy: {
-            '/api': 'http://www.prodesign.pe'
+          "fixtures": {
+            "/api": "data"
           }
         }
       }

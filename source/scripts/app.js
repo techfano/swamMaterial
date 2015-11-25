@@ -8,7 +8,8 @@
         'ui.router',
         'module.controller',
         'module.service',
-        'module.constant'
+        'module.constant',
+        'module.component'
     ]);
 
 
@@ -41,16 +42,11 @@
             url: "/login",
             templateUrl: "views/login.view.html",
             controller: "controller.login"
-        }).state('today', {
+        }).state('uiTable', {
             parent: 'root',
-            url: "/today",
-            templateUrl: "views/today.view.html",
-            controller: "controller.post"
-        }).state('article', {
-            parent: 'root',
-            url: "/article/:url",
-            templateUrl: "views/paragraph.view.html",
-            controller: "controller.paragraph"
+            url: "/uiTable",
+            templateUrl: "views/uiTable.view.html",
+            controller: "controller.uiTable"
         });
 
         $urlRouterProvider.otherwise("/today");

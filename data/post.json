@@ -1,0 +1,25 @@
+[{
+    "_id": {
+        "$oid": "55088fd2e4b018f3e2920760"
+    },
+    "url": "principios_basicos_para_una_buena_experiencia_de_usuario",
+    "title": "Principios básicos para una buena experiencia de usuario",
+    "title_sub_head": "7 Principios para desarrollar una buena experiencia de usuario",
+    "image_url": "http://blog.outsourcemanagement.com/Portals/54437/images/OMI%20Customer%20Experience%20Powered%20by%20366%20Degrees.jpg",
+    "resume": "En este articulo veremos un análisis de los principales principios que debemos de tomar en cuenta al momento de diseñar, crear, desarrollar un producto o servicio.",
+    "mainparagraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed mi id dui euismod dictum sit amet eu orci. Praesent eu faucibus justo. Nunc sollicitudin cursus dui, eget consectetur nibh feugiat eget. Nulla cursus mi eu rhoncus facilisis. Suspendisse interdum dolor risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec id facilisis elit. Fusce blandit sodales urna quis aliquet. Donec felis diam, blandit at sapien mattis, scelerisque tristique mi. Cras nulla velit, condimentum vel tempus sit amet, congue sit amet nibh. Fusce quis magna facilisis, laoreet felis vel, vestibulum tortor. Aliquam quis elit erat. Etiam a tristique elit. Quisque dolor arcu, pharetra vitae enim eget, pulvinar tristique ipsum.",
+    "autor_id": "55089165e4b018f3e2920766",
+    "post_time": "2014-05-25 22:30:55"
+},{
+    "_id": {
+        "$oid": "55089008e4b018f3e2920761"
+    },
+    "url": "fudamentos_de_una_buena_experiencia_de_usuario",
+    "title": "Fundamentos de una buena experiencia de usuario",
+    "title_sub_head": "Principales fundamentos para crear buenas experiencias",
+    "image_url": "http://media.peugeot.com/images/backgrounds/design/concept-peugeot-design-lab.jpg",
+    "resume": "Conoce los fundamentos necesarios y crea la mejor experiencia posible tomándolos como principio fundamental en todo el proceso de creación de tu producto o servicio, logrando publicar o vender algo que nunca habías pensado",
+    "mainparagraph": "Man paragrpah kljljlkjlk",
+    "autor_id": "55089165e4b018f3e2920766",
+    "post_time": "2014-08-22 00:00:00"
+}]
