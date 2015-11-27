@@ -2,10 +2,9 @@
 
 <div layout="row" layout-wrap>
 
-	<div flex="33">
-	</div>
-	<div flex="33">
+	<md-card>
 
+		<h3>Static Data</h3>
 		<table class="swam-table" align="center">
 			<thead>
 				<th>1</th>
@@ -16,18 +15,49 @@
 			<tbody ui-table table-model="list"></tbody>
 		</table>
 
-	</div>
-	<div flex="33">
-
+	</md-card>
+	<md-card>
+	
+		<h3>Request Data</h3>
 		<table class="swam-table" align="center">
 			<thead>
-				<th>1</th>
-				<th>2</th>
-				<th>3</th>
-				<th>4</th>
+				<th>Name</th>
+				<th>Last Name</th>
+				<th>User Name</th>
 			</thead>
-			<tbody ui-table table-request="users"></tbody>
+			<tbody ui-table table-request="userConf"></tbody>
 		</table>
 
-	</div>
+	</md-card>
+
+	<md-card>
+
+		<h3>Request Data with sorting</h3>
+		<table class="swam-table" align="center">
+			<thead>
+				<th>
+					<span>Name</span> 
+					<md-button class="md-icon-button" aria-label="toggle">
+	              		<md-icon md-svg-icon="md-toggle-arrow"></md-icon>
+	            	</md-button>
+	            </th>
+				<th>
+					<span>Last Name</span> 
+					<md-button class="md-icon-button" aria-label="true">
+		          		<md-icon md-svg-icon="md-toggle-arrow"></md-icon>
+	            	</md-button>
+				</th>
+				<th>
+					<span>User Name</span>
+					<md-button class="md-icon-button" aria-label="toggle">
+		          		<md-icon md-svg-icon="md-toggle-arrow"></md-icon>
+	            	</md-button>
+				</th>
+			</thead>
+			<tbody ui-table table-request="userConf"></tbody>
+		</table>
+
+	</md-card>
+
+	
 </div>

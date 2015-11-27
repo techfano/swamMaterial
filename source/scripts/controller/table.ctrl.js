@@ -23,15 +23,22 @@
       ];
 
       
-      var userConf = {
+      $scope.userConf = {
 
         parameters:{
-          headerDefine:[]//review
-        }
+          
+        },
+
+        headerDefine:[
+                      {obj:"name"},
+                      {obj:"lastName"},
+                       {obj:"username"}
+                      ],
+
+        request: $resourceService.request('user')
 
       };
 
-      var users =  $resourceService.request('user');
 
       /*$scope.gotoArticle = function(url){
         $state.search('article',{url:url});

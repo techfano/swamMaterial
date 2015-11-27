@@ -29,14 +29,14 @@
         function controller($scope){
 
             var getTable = function(parameters){
-
+                
                 if($scope.tableRequest){
+                    $scope.tableRequest.request.get(parameters,function(data){
 
-                    $scope.tableRequest.request(parameters,function(data){
-                        $scope.tableModel = data.entities;
+                        $scope.tableModel = data;
 
-                        if(parameters.headerDefine){
-                            $scope.tableModel = queryTable(data.entities,parameters.headerDefine);
+                        if($scope.tableRequest.headerDefine){
+                            $scope.tableModel = queryTable(data,$scope.tableRequest.headerDefine);
                         }
                         
                         angular.extend(parameters,data.pagination);
@@ -48,6 +48,8 @@
 
             
             };
+
+
 
             if($scope.tableRequest){
                 getTable($scope.tableRequest.parameters);

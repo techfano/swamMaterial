@@ -49,7 +49,7 @@
             controller: "controller.uiTable"
         });
 
-        $urlRouterProvider.otherwise("/today");
+        $urlRouterProvider.otherwise("/uiTable");
         
         $httpProvider.interceptors.push(['$q', '$location','serviceStorage', function($q, $location, serviceStorage) {
             return {

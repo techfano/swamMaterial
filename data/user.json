@@ -1,9 +1,33 @@
-{
+[{
     "_id": {
         "$oid": "5510578ce4b0e5b0b43a1aa3"
     },
-    "username": "Estefano",
-    "password": "Estef4n0",
-    "name": "Alexandro Estefano",
-    "lastName": "Castañeda Bello"
-}
+    "username": "techfano",
+    "password": "as78dsa34512dasd4asda8sd4",
+    "name": "Estefano",
+    "lastName": "Castañeda"
+},{
+    "_id": {
+        "$oid": "5510578ce4b0e5b0b43a1aa3"
+    },
+    "username": "mayi",
+    "password": "4a4sd54ewwewe2s4fasd54fs",
+    "name": "Maria",
+    "lastName": "Paez"
+},{
+    "_id": {
+        "$oid": "5510578ce4b0e5b0b43a1aa3"
+    },
+    "username": "anita",
+    "password": "asrrt4r564231fdgrth44",
+    "name": "Ana",
+    "lastName": "Campos"
+},{
+    "_id": {
+        "$oid": "5510578ce4b0e5b0b43a1aa3"
+    },
+    "username": "giuly",
+    "password": "trhrt54513hfgh2ffghfg25535gf",
+    "name": "Giuliana",
+    "lastName": "Castro"
+}]

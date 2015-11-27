@@ -10,7 +10,7 @@
        		params:{
        		},
        		actions:{
-       			'get':   {method:'GET'}
+       			'get':   {method:'GET',isArray:true}
        		}
        	}
        
