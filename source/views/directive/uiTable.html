@@ -1,3 +1,17 @@
-<tr animated-load="fadeIn" ng-repeat="item in tableModel">
-	<td ng-repeat="col in item">{{col}}</td>
-</tr>
+<thead>
+	<th ng-repeat="item in tableRequest.headerDefine">
+		<span>{{item.title}}</span>
+		<md-button ng-show="tableRequest.sorting" class="md-icon-button" ng-click="toggle1=!toggle1" aria-label="toggle">
+       		<md-icon ng-if="!toggle1" md-svg-icon="caret_down"></md-icon>
+      		<md-icon ng-if="toggle1" md-svg-icon="caret_up"></md-icon>
+       	</md-button>
+	</th>
+</thead>
+<tbody>
+	<tr ng-repeat="item in tableModel">
+		<td ng-repeat="col in item">{{col}}</td>
+	</tr>
+</tbody>
+				
+
+

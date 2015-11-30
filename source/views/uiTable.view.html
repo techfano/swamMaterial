@@ -4,59 +4,53 @@
 
 	<md-card>
 
-		<h3>Static Data</h3>
-		<table class="swam-table" align="center">
-			<thead>
-				<th>1</th>
-				<th>2</th>
-				<th>3</th>
-				<th>4</th>
-			</thead>
-			<tbody ui-table table-model="list"></tbody>
-		</table>
-
-	</md-card>
-	<md-card>
-	
-		<h3>Request Data</h3>
-		<table class="swam-table" align="center">
-			<thead>
-				<th>Name</th>
-				<th>Last Name</th>
-				<th>User Name</th>
-			</thead>
-			<tbody ui-table table-request="userConf"></tbody>
-		</table>
-
+		<md-toolbar>
+	      <div class="md-toolbar-tools">	        
+	        <h2>
+	          <span>Static Data</span>
+	        </h2>
+	      </div>
+	    </md-toolbar>
+	    <md-content>
+			<table class="swam-table" align="center">
+				<thead>
+					<th>1</th>
+					<th>2</th>
+					<th>3</th>
+					<th>4</th>
+				</thead>
+				<tbody ui-table table-model="list"></tbody>
+			</table>
+	    </md-content>
 	</md-card>
 
 	<md-card>
+		<md-toolbar>
+	      <div class="md-toolbar-tools">	        
+	        <h2>
+	          <span>Request Data</span>
+	        </h2>
+	      </div>
+	    </md-toolbar>
+		<md-content>
+			<table ui-table table-request="userConf1" class="swam-table" align="center">
+			</table>
+		</md-content>
 
-		<h3>Request Data with sorting</h3>
-		<table class="swam-table" align="center">
-			<thead>
-				<th>
-					<span>Name</span> 
-					<md-button class="md-icon-button" aria-label="toggle">
-	              		<md-icon md-svg-icon="md-toggle-arrow"></md-icon>
-	            	</md-button>
-	            </th>
-				<th>
-					<span>Last Name</span> 
-					<md-button class="md-icon-button" aria-label="true">
-		          		<md-icon md-svg-icon="md-toggle-arrow"></md-icon>
-	            	</md-button>
-				</th>
-				<th>
-					<span>User Name</span>
-					<md-button class="md-icon-button" aria-label="toggle">
-		          		<md-icon md-svg-icon="md-toggle-arrow"></md-icon>
-	            	</md-button>
-				</th>
-			</thead>
-			<tbody ui-table table-request="userConf"></tbody>
-		</table>
+	</md-card>
 
+	<md-card>
+		<md-toolbar>
+	      <div class="md-toolbar-tools">	        
+	        <h2>
+	          <span>Request Data with sorting</span>
+	        </h2>
+	      </div>
+	    </md-toolbar>
+	    <md-content>
+			<table ui-table table-request="userConf2" class="swam-table" align="center">			
+			</table>
+		</md-content>
 	</md-card>
 
 	

@@ -1,15 +1,15 @@
 (function() {
   'use strict';
-  angular.module('module.controller.uiTable', [])
+  angular.module('module.controller.uiWizard', [])
     .config(function($stateProvider){
-      $stateProvider.state('uiTable', {
+      $stateProvider.state('uiWizard', {
           parent: 'root',
-          url: "/uiTable",
-          templateUrl: "views/uiTable.view.html",
-          controller: "controller.uiTable"
+          url: "/uiWizard",
+          templateUrl: "views/uiWizard.view.html",
+          controller: "controller.uiWizard"
       });
     })
-    .controller('controller.uiTable', controllerPost); 
+    .controller('controller.uiWizard', controllerPost); 
 
       controllerPost.$inject=[
       	'$scope',

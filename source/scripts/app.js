@@ -42,11 +42,6 @@
             url: "/login",
             templateUrl: "views/login.view.html",
             controller: "controller.login"
-        }).state('uiTable', {
-            parent: 'root',
-            url: "/uiTable",
-            templateUrl: "views/uiTable.view.html",
-            controller: "controller.uiTable"
         });
 
         $urlRouterProvider.otherwise("/uiTable");
@@ -81,6 +76,8 @@
                       .icon("share", "svg/share.svg", 24)
                       .icon("arrow_back", "svg/arrow_back.svg", 24)
                       .icon("arrow_forward", "svg/arrow_forward.svg", 24)
+                      .icon("caret_up", "svg/caret_up.svg", 24)
+                      .icon("caret_down", "svg/caret_down.svg", 24)
                       .icon("close", "svg/close.svg", 24);
 
                       $mdThemingProvider.theme('default')

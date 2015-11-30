@@ -1,15 +1,15 @@
 (function() {
   'use strict';
-  angular.module('module.controller.uiTable', [])
+  angular.module('module.controller.uiTabs', [])
     .config(function($stateProvider){
-      $stateProvider.state('uiTable', {
+      $stateProvider.state('uiTabs', {
           parent: 'root',
-          url: "/uiTable",
-          templateUrl: "views/uiTable.view.html",
-          controller: "controller.uiTable"
+          url: "/uiTabs",
+          templateUrl: "views/uiTabs.view.html",
+          controller: "controller.uiTabs"
       });
     })
-    .controller('controller.uiTable', controllerPost); 
+    .controller('controller.uiTabs', controllerPost); 
 
       controllerPost.$inject=[
       	'$scope',
