@@ -99,10 +99,17 @@ md-content .article p{
 }
 
 #container{
-	width: 100%;
+	width: 1280px;
 	margin: 0 auto;
-	background: $background-color !important;
+	background: #FFFFFF !important;
 	height:100%;
+	position: relative;
+}
+
+@media(max-width:1280px){
+	#container{
+		width: 100%;
+	}
 }
 
 @media(max-width:800px){

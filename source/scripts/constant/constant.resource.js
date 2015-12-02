@@ -12,7 +12,16 @@
        		actions:{
        			'get':   {method:'GET',isArray:true}
        		}
-       	}
+       	},
+
+        author:{
+          url:'api/author',
+          params:{
+          },
+          actions:{
+            'get':   {method:'GET',isArray:true}
+          }
+        }
        
     });
 

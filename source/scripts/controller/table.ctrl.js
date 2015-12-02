@@ -30,6 +30,7 @@
         {"1":"5","2":"E","3":"5","4":"V"}
       ];
 
+
       
       $scope.userConf1 = {
 
@@ -60,6 +61,34 @@
         ],
 
         request: $resourceService.request('user')
+
+      };
+      
+      var deleteUser = function(){
+        console.log('user deleted!');
+      };
+
+      $scope.userConf3 = {
+
+        parameters:{
+          
+        },
+
+        headerDefine:[
+          {obj: 'name', title: 'Names'},
+          {obj: 'last_name', title: 'Last names'},
+          {obj: 'alias', title: 'Alias'}
+        ],
+
+        actions:[{
+          type: 'icon', // icon|button|checkbox
+          title: 'Delete',
+          text: '',
+          icon: 'search',
+          method: deleteUser        
+        }],
+
+        request: $resourceService.request('author')
 
       };
       
